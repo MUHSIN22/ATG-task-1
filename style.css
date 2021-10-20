@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+
+:root{
+    --primary-font :  'IBM Plex Sans', sans-serif;
+    --bg-light : #F2F2F2;
+
+}
+
+
+/**************** GLOBAL STYLES START **************************/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+    color: #2E2E2E;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* !!!!!!!!!!!!!!GLOBAL STYLES END!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+
+
+/**************** HEADER SECTION *****************************/
+.header-large{
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: 100;
+}
+.header-large .search-bar{
+    background: var(--bg-light);
+    padding: 0.5rem 1rem;
+    border-radius: 5rem;
+}
+.header-large #search-input{
+    border: none;
+    outline: none;
+    width: max-content;
+    background: transparent;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    width: 17rem;
+    margin-left: 1rem;
+}
+.header-large #btn-create-account{
+    text-decoration: none;
+    color: #2E2E2E;
+    line-height: 20.8px;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+.header-large #btn-create-account strong{
+    font-weight: 700;
+    margin-right: 1rem;
+}
+.header-mobile{
+    display: none;
+}
+/* !!!!!!!!!!!!!! HEADER SECTION END !!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/**************** LANDING SECTION START *************************/
+.landing-section{
+    background: url("/public/landing-image.png");
+    height: 60vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: inset ;
+    display: flex;
+    position: relative;
+    margin-top: 4rem;
+}
+.landing-section:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.6) 100%);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.landing-wrapper{
+    z-index: 1;
+    display: flex;
+}
+.landing-wrapper .text-wrapper{
+    margin-top: auto;
+    margin-bottom: 4rem;
+}
+.landing-heading{
+    color: #fff;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 47px;
+}
+.landing-subtext{
+    color: #fff;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+/* !!!!!!!!!!!!!! LANDING SECTION END !!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+
+/**************** MEDIA QUERIES *************************/
+@media only screen and (max-width: 810px) {
+    .landing-section{
+        background: url('/public/landing image mobile.png');
+        background-size: cover;
+        margin: 0;
+        height: 20rem;
+    }
+    .header-large{
+        display: none;
+    }
+    .header-mobile{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: transparent;
+        position: fixed;
+        padding-top: 1rem;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
+    .header-mobile btn{
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+@media only screen and (max-width: 510px){
+    .landing-section{
+        height: 15rem;
+    }
+    .landing-wrapper .text-wrapper{
+        margin-bottom: 2rem;
+    }
+    .landing-heading{
+        font-size: 17px;
+        line-height: 22px;
+    }
+    .landing-subtext{
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+/**************** MEDIA QUERIES END ************************* */
