@@ -4,7 +4,8 @@
 :root{
     --primary-font :  'IBM Plex Sans', sans-serif;
     --bg-light : #F2F2F2;
-
+    --bg-grey : #EDEEF0;
+    --bg-grey-hover : #e2e3e5;
 }
 
 
@@ -19,8 +20,6 @@
 html{
     scroll-behavior: smooth;
 }
-/* !!!!!!!!!!!!!!GLOBAL STYLES END!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-
 
 
 /**************** HEADER SECTION *****************************/
@@ -65,7 +64,7 @@ html{
 .header-mobile{
     display: none;
 }
-/* !!!!!!!!!!!!!! HEADER SECTION END !!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
 
 /**************** LANDING SECTION START *************************/
 .landing-section{
@@ -107,8 +106,174 @@ html{
     line-height: 23px;
 }
 
-/* !!!!!!!!!!!!!! LANDING SECTION END !!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/****************POST SECTION ***************************/
+.post-section{
+    display: grid;
+    margin-top: 2rem;
+    grid-template-columns: 4fr 1fr;
+    grid-template-areas: "nav nav"
+                         "post location";
+    position: relative;
+}
+.post-section nav{
+    grid-area: nav;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding:0.5rem 0;
+    border-bottom: 1px solid var(--bg-grey);
+    position: sticky;
+    top: 4rem;
+}
+.post-section nav ul{
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+.post-section nav ul li{
+    font-size: 16px;
+    line-height: 21px;
+    position: relative;
+    display: flex;
+    cursor: pointer;
+}
+.post-section nav ul li:not(:first-child){
+    margin-left: 1rem;
+}
+.post-section .enabled-nav-link:after{
+    content: "";
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    background: #2E2E2E;
+    bottom: -1rem;
 
+}
+
+.post-section .post-btn{
+    background: var(--bg-grey);
+    margin-right: 1rem;
+    transition: all 0.2s ease;
+}
+.post-section .post-btn:hover{
+    background: var(--bg-grey-hover);
+}
+.post-btn img{
+    margin-left: 1rem;
+}
+.post-section .btn{
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+}
+
+.location-container{
+    grid-area: location;
+    margin-top: 2rem;
+}
+.location-wrapper{
+    position: sticky;
+    top: 10rem;
+}
+.location-input-wrapper{
+    display: flex;
+    border-bottom: 1px solid #2E2E2E;
+    padding: 0.5rem 0;
+    align-items: center;
+}
+.location-input-wrapper input{
+    border: none;
+    outline: none;
+    margin-left: 1rem;
+    font-size: 14px;
+    line-height: 18px;
+}
+.location-input-wrapper img{
+    height:100%;
+}
+.location-input-wrapper .edit-icon{
+    margin-left: auto;
+}
+.warning-text{
+    display: flex;
+    font-size: 12px;
+    line-height: 16px;
+    opacity: 0.5;
+    margin-top: 2rem;
+    width: 98%;
+}
+.warning-text img{
+    height: 100%;
+    margin-top: 3px;
+    margin-right: 1rem;
+}
+
+.post-field{
+    grid-area: post;
+}
+
+.post-card{
+    border: 1px solid #E0E0E0;
+    border-radius: 4px;
+    max-width: 780px;
+    margin: 1rem 0;
+}
+.post-card .image-container{
+    height: 14rem;
+    width: 100%;
+    background-size: cover !important;
+    background-repeat: no-repeat;
+}
+.post-card .card-body{
+    display: flex;
+    flex-direction: column;
+}
+.post-card .card-title-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.post-card .card-title{
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 134.17%;
+}
+
+.profile-and-share{
+    display: flex;
+    justify-content: space-between;
+}
+.share-and-views{
+    display: flex;
+    align-items: center;
+}
+.views{
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    margin-left: 0.5rem;
+}
+.share-and-views .btn{
+    background: var(--bg-grey);
+    transition: all 0.2s ease;
+    margin-left: 2rem;
+}
+.share-and-views .btn:hover{
+    background: var(--bg-grey-hover);
+}
+.post-type{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+}
+.card-description{
+    font-size: 19px;
+    line-height: 134.17%;
+    color: #5C5C5C;
+}
 
 /**************** MEDIA QUERIES *************************/
 @media only screen and (max-width: 810px) {
