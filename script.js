@@ -2,6 +2,7 @@ let signUp = document.querySelector(".sign-up-wrapper")
 let signIn = document.querySelector(".sign-in-wrapper")
 let passwordVisible = [false,false]
 let isOptions = false
+let cardContent = [];
 
 const showSignUp = () =>{
     signIn.style.display = "none"
@@ -50,15 +51,40 @@ const navLinkClick = (event) => {
 
 const showOptions = (event) =>{
     if(event.target.nextElementSibling){
-        event.target.nextElementSibling.style.display = isOptions?"none":"block";
-        isOptions = !isOptions
+        event.target.nextElementSibling.style.display = "block";
     }else{
-        event.target.children[1].style.display = isOptions?"none":"block";
-        isOptions = !isOptions
+        event.target.children[1].style.display = "block";
     }
 }
 
-const optionSelected = (event) => {
-    let options = document.querySelector('.option-list')
-    options.style.display = "none"
+const handleCardDescription = () =>{
+    let card = document.querySelector('.card-body')
+    let cardDescription = document.querySelectorAll('.card-description')
+    let windowWidth = window.innerWidth
+
+    let divisor ;
+    if (windowWidth < 507){
+        divisor = 5
+    }else if(windowWidth < 768){
+        divisor = 6.5;
+    }else{
+        divisor = 7
+    }
+    
+    card = card.offsetWidth / divisor
+    
+    if(cardContent.length === 0){
+        for(i =0 ;i<cardDescription.length ;i++){
+            cardContent[i] = cardDescription[i].innerHTML
+            cardDescription[i].innerHTML = cardContent[i].slice(0,card) + "..."
+        }
+    }else{
+        for(i =0 ;i<cardDescription.length ;i++){
+            cardDescription[i].innerHTML = cardContent[i].slice(0,card) + "..."
+        }
+        
+    }
+    
+
 }
+window.addEventListener("resize", handleCardDescription);
