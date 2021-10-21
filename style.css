@@ -75,7 +75,7 @@ html{
 
 /**************** LANDING SECTION START *************************/
 .landing-section{
-    background: url("/public/landing-image.png");
+    background: url("public/landing-image.png");
     height: 60vh;
     background-size: cover;
     background-repeat: no-repeat;
@@ -568,7 +568,7 @@ html{
 /**************** MEDIA QUERIES *************************/
 @media only screen and (max-width: 810px) {
     .landing-section{
-        background: url('/public/landing image mobile.png');
+        background: url('public/landing image mobile.png');
         background-size: cover;
         margin: 0;
         height: 20rem;
