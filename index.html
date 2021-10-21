@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="style.css" type="text/css" media="all">
     <title>ATG.WORLD</title>
 </head>
 
@@ -49,13 +49,15 @@
 
     <!-------------- Post section --------------------------->
     <section class="post-section container">
+
+
         <nav class="bg-white">
             <ul>
-                <li class="enabled-nav-link">All Posts(32)</li>
-                <li>Article</li>
-                <li>Event</li>
-                <li>Education</li>
-                <li>Job</li>
+                <li class="enabled-nav-link" onclick="navLinkClick(event)">All Posts(32)</li>
+                <li onclick="navLinkClick(event)">Article</li>
+                <li onclick="navLinkClick(event)">Event</li>
+                <li onclick="navLinkClick(event)">Education</li>
+                <li onclick="navLinkClick(event)">Job</li>
             </ul>
             <div class="btn-wrapper">
                 <button class="btn post-btn">
@@ -68,6 +70,7 @@
                 </button>
             </div>
         </nav>
+        
         <nav class="mobile-nav bg-white">
             <strong>Posts(368)</strong>
             <button class="btn btn-filter">
@@ -75,6 +78,8 @@
                 <img src="/public/down-arrow.png" alt="">
             </button>
         </nav>
+
+
         <section class="location-container">
             <div class="location-wrapper">
                 <div class="location-input-wrapper">
@@ -87,15 +92,53 @@
                     <p>Your location will help us serve better and extend a personalised experience.</p>
                 </div>
             </div>
+            <div class="recommended-groups-wrapper">
+                <h6 class="recommended-groups-heading">
+                    <img src="/public/thumbs up.png" alt="">
+                    REcommended Groups
+                </h6>
+                <div class="groups">
+                    <img src="/public/group 1 profile.png" class="group-profile" alt="">
+                    <p class="group-name">Leisure</p>
+                    <button class="btn btn-follow-group">Follow</button>
+                </div>
+                <div class="groups">
+                    <img src="/public/group 2 profile.png" class="group-profile" alt="">
+                    <p class="group-name">Activism</p>
+                    <button class="btn btn-follow-group">Follow</button>
+                </div>
+                <div class="groups">
+                    <img src="/public/group 3 profile.png" class="group-profile" alt="">
+                    <p class="group-name">MBA</p>
+                    <button class="btn btn-follow-group">Follow</button>
+                </div>
+                <div class="groups">
+                    <img src="/public/group 4 profile.png" class="group-profile" alt="">
+                    <p class="group-name">Philosophy</p>
+                    <button class="btn btn-follow-group">Follow</button>
+                </div>
+
+                <p class="see-more-groups text-primary">See More...</p>
+            </div>
         </section>
+
+
         <section class="post-field">
+
             <div class="post-card">
                 <div class="image-container" style="background: url('/public/card 1 image.png')"></div>
                 <div class="card-body">
                     <p class="post-type">✍️ Article</p>
                     <div class="card-title-wrapper">
                         <h6 class="card-title">What if famous brands had regular fonts? Meet RegulaBrands!</h6>
-                        <img src="/public/card-options.png" alt="">
+                        <div class="btn option-btn" onclick="showOptions(event)">
+                            <img src="/public/card-options.png" alt="">
+                            <ul class="option-list">
+                                <li onclick="optionSelected()">Edit</li>
+                                <li onclick="optionSelected()">Report</li>
+                                <li onclick="optionSelected()">Option 3</li>
+                            </ul>
+                        </div>
                     </div>
                     <p class="card-description">
                         I’ve worked in UX for the better part of a decade. From now on, I plan to reivield due to the
@@ -123,7 +166,14 @@
                     <div class="card-title-wrapper">
                         <h6 class="card-title">Tax Benefits for Investment under National Pension Scheme launched by
                             Government</h6>
-                        <img src="/public/card-options.png" alt="">
+                            <div class="btn option-btn" onclick="showOptions(event)">
+                                <img src="/public/card-options.png" alt="">
+                                <ul class="option-list">
+                                    <li onclick="optionSelected()">Edit</li>
+                                    <li onclick="optionSelected()">Report</li>
+                                    <li onclick="optionSelected()">Option 3</li>
+                                </ul>
+                            </div>
                     </div>
                     <p class="card-description">
                         I’ve worked in UX for the better part of a decade. From now on, I plan to reivield due to the
@@ -150,7 +200,14 @@
                     <p class="post-type">🗓️ Meetup</p>
                     <div class="card-title-wrapper">
                         <h6 class="card-title">Finance & Investment Elite Social Mixer @Lujiazui</h6>
-                        <img src="/public/card-options.png" alt="">
+                        <div class="btn option-btn" onclick="showOptions(event)">
+                            <img src="/public/card-options.png" alt="">
+                            <ul class="option-list">
+                                <li onclick="optionSelected()">Edit</li>
+                                <li onclick="optionSelected()">Report</li>
+                                <li onclick="optionSelected()">Option 3</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="card-date">
                         <p>
@@ -185,7 +242,14 @@
                     <p class="post-type">💼️ Job</p>
                     <div class="card-title-wrapper">
                         <h6 class="card-title">Software Developer</h6>
-                        <img src="/public/card-options.png" alt="">
+                        <div class="btn option-btn" onclick="showOptions(event)">
+                            <img src="/public/card-options.png" alt="">
+                            <ul class="option-list">
+                                <li onclick="optionSelected(event)">Edit</li>
+                                <li onclick="optionSelected()">Report</li>
+                                <li onclick="optionSelected()">Option 3</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="card-date">
                         <p>
@@ -215,9 +279,10 @@
                 </div>
             </div>
         </section>
+
     </section>
 
-    <!------------------Login Form ----------------------->
+    <!------------------Sign Up fomr----------------------->
     <section class="sign-up-wrapper">
         <div class="sign-up-form-container">
             <img src="/public/close-icon.png" onclick="closeSignUp()" class="close-form" alt="">
@@ -243,13 +308,13 @@
                     
                 <div class="submit-btn-wrapper">
                     <button type="submit" class="btn btn-primary create-account">Create Account</button>
-                    <a href="#">or, Sign In</a>
+                    <a href="#" onclick="showSignIn()">or, Sign In</a>
                 </div>
-                <button class="btn more-sign-up-option">
+                <button class="btn more-sign-up-option" onclick="setLogin()">
                     <img src="/public/facebook.png" alt="">
                     Sign up with Facebook
                 </button>
-                <button class="btn more-sign-up-option">
+                <button class="btn more-sign-up-option" onclick="setLogin()">
                     <img src="/public/google.png" alt="">
                     Sign up with Google
                 </button>
@@ -268,7 +333,7 @@
         </div>
     </section>
 
-
+    <!----------------------------------Sign In wrapper  ------------------------------------------->
     <section class="sign-in-wrapper">
         <div class="sign-in-form-container">
             <img src="/public/close-icon.png" onclick="closeSignUp()" class="close-form" alt="">
@@ -287,14 +352,14 @@
                     </div>
                 </div>       
                 <div class="submit-btn-wrapper">
-                    <button type="submit" class="btn btn-primary create-account">Sign In</button>
-                    <a href="#">or, Create Account</a>
+                    <button type="submit" class="btn btn-primary create-account" onclick="setLogin()">Sign In</button>
+                    <a href="#" onclick="showSignUp()">or, Create Account</a>
                 </div>
-                <button class="btn more-sign-in-option">
+                <button class="btn more-sign-in-option" onclick="setLogin()"> 
                     <img src="/public/facebook.png" alt="">
                     Sign In with Facebook
                 </button>
-                <button class="btn more-sign-in-option">
+                <button class="btn more-sign-in-option" onclick="setLogin()">
                     <img src="/public/google.png" alt="">
                     Sign In with Google
                 </button>
