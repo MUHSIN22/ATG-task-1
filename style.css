@@ -107,6 +107,7 @@ html{
 }
 
 /****************POST SECTION ***************************/
+
 .post-section{
     display: grid;
     margin-top: 2rem;
@@ -114,6 +115,7 @@ html{
     grid-template-areas: "nav nav"
                          "post location";
     position: relative;
+    grid-gap: 2rem;
 }
 .post-section nav{
     grid-area: nav;
@@ -125,6 +127,9 @@ html{
     border-bottom: 1px solid var(--bg-grey);
     position: sticky;
     top: 4rem;
+}
+.post-section .mobile-nav{
+    display: none;
 }
 .post-section nav ul{
     list-style: none;
@@ -219,6 +224,7 @@ html{
     border-radius: 4px;
     max-width: 780px;
     margin: 1rem 0;
+    overflow: hidden;
 }
 .post-card .image-container{
     height: 14rem;
@@ -242,12 +248,24 @@ html{
 }
 
 .profile-and-share{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: max-content 5fr 3fr max-content;
+    grid-template-areas: "profile name view share";
+    align-items: center;
+    grid-column-gap: 1rem;
 }
-.share-and-views{
+.profile{
+    grid-area: profile;
+    border-radius: 50%;
+}
+.profile-name{
+    grid-area: name;
+}
+.views-section{
+    grid-area: view;
     display: flex;
     align-items: center;
+    justify-content:flex-end;
 }
 .views{
     margin: 0;
@@ -256,13 +274,17 @@ html{
     line-height: 18px;
     margin-left: 0.5rem;
 }
-.share-and-views .btn{
+.btn-share{
+    grid-area: share;
     background: var(--bg-grey);
     transition: all 0.2s ease;
-    margin-left: 2rem;
+    display: flex;
 }
-.share-and-views .btn:hover{
+.btn-share:hover{
     background: var(--bg-grey-hover);
+}
+.btn-share span{
+    display: none;
 }
 .post-type{
     font-weight: 500;
@@ -273,6 +295,185 @@ html{
     font-size: 19px;
     line-height: 134.17%;
     color: #5C5C5C;
+}
+
+/************* Card with button ***********/
+.card-date{
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+}
+.post-card-location{
+    margin-left: 2rem;
+}
+.btn-card-view{
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
+/*****************Signup form  **************************/
+.sign-up-wrapper,
+.sign-in-wrapper{
+    width:100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.6);
+    display: grid;
+    place-items: center;
+    display: none;
+}
+.sign-up-form-container,
+.sign-in-form-container{
+    background: #fff;
+    max-width: 800px;
+    height: max-content;
+    display: grid;
+    border-radius: 8px;
+    position: relative;
+    animation: scale-in 0.3s ease;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: "top-text top-text"
+                         "sign-up sign-in";
+}
+.close-form{
+    position: absolute;
+    right: -1%;
+    top: -6%;
+    cursor: pointer;
+}
+.sign-up-top-text,
+.sign-in-top-text{
+    grid-area: top-text;
+    background: #EFFFF4;
+    color: #008A45;
+    padding: 1rem;
+    text-align: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+}
+.sign-up-form,
+.sign-in-form{
+    grid-area: sign-up;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+
+}
+.form-heading{
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 31px;
+    margin-bottom: 1.5rem;
+}
+.first-and-last-name{
+    display: flex;
+}
+.password-wrapper{
+    display: flex;
+}
+.sign-up-form input,
+.sign-in-form input{
+    width:100%;
+    padding: 1rem;
+    outline: none;
+    background: #F7F8FA;
+    border: 1px solid #D9D9DB;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 16px;
+}
+.password-visibility-icon {
+	background: #F7F8FA;
+	display: grid;
+	place-items: center;
+	border: 1px solid #D9D9DB;
+	border-left: none;
+	padding: 1rem;
+	opacity: 0.6;
+}
+.password-wrapper input{
+    border-right: none;
+}
+.password-visibility-icon img{
+    width: 1.5rem;
+    cursor: pointer;
+}
+.sign-up-form button[type="submit"],
+.sign-in-form button[type="submit"]{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;  
+    margin: 1.5rem 0;
+    border-radius: 5rem;
+    padding: 0.6rem;
+    width: 100%;
+}
+.submit-btn-wrapper a{
+    display: none;
+}
+.more-sign-up-option,
+.more-sign-in-option{
+    border: 0.6px solid #D9D9DB;
+    border-radius: 2px;
+    font-size: 14px;
+    line-height: 16px;
+    background: transparent;
+    padding: 0.6rem;
+    margin: 0.2rem 0;
+}
+.sign-in-option,
+.sign-up-option{
+    grid-area: sign-in;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    margin: 2rem;
+}
+.sign-in-option .sign-in-para,
+.sign-up-para{
+    align-self: flex-end;
+    font-size: 13px;
+    line-height: 17px;
+    font-weight: 600;
+}
+.sign-in-para a,
+.sign-up-para a{
+    font-size: 14px;
+    text-decoration: none;
+}
+.sign-in-option .terms-and-condition{
+    font-size: 11px;
+    line-height: 16px;
+    text-align: right;
+    letter-spacing: -0.008em;
+    opacity: 0.6;
+}
+.forget-password{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: -0.008em;
+    width: 100%;
+    color: #000;
+    text-decoration: none;
+    margin:0.5rem 0;
+}
+.mobile-term-and-conditions{
+    display: none;
+}
+.form-heading img{
+    display: none;
 }
 
 /**************** MEDIA QUERIES *************************/
@@ -291,16 +492,126 @@ html{
         justify-content: space-between;
         align-items: center;
         background: transparent;
-        position: fixed;
+        position: absolute;
         padding-top: 1rem;
         top: 0;
-        left: 0;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 100;
     }
     .header-mobile btn{
         font-weight: 500;
         font-size: 12px;
         line-height: 16px;
+    }
+    .location-container{
+        display: none;
+    }
+    .post-section{
+        grid-template-areas: "nav nav"
+                             "post post";
+    }
+    .post-section nav{
+        display: none;
+    }
+    .post-section .mobile-nav{
+        display: flex;
+        top: 0;
+        border: none;
+    }
+    .post-section .mobile-nav strong{
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.01em;
+    }
+    .btn-filter{
+        background: var(--bg-grey);
+        transition: all 0.2s ease;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 17px;
+    }
+    .btn-filter img{
+        margin-left: 1rem;
+    }
+    .btn-filter:hover{
+        background: var(--bg-grey-hover);
+    }
+    .post-card .image-container{
+        height: 7rem;
+    }
+    .profile-and-share{
+        grid-template-columns: max-content 1fr 1fr;
+        grid-template-areas: "profile name share"
+                             "profile view share";
+    }
+    .views-section{
+        justify-content: flex-start;
+    }
+    .btn-share{
+        width: max-content;
+        justify-self: flex-end;
+    }
+    .btn-share span{
+        margin-left: 1rem;
+        display: block;
+        font-size: 12px;
+    }
+    .profile-name{
+        font-size: 13px;
+        line-height: 17px;
+        align-self: flex-end;
+    }
+    .views{
+        font-size: 12px;
+        line-height: 16px;
+        margin-left: 0;
+    }
+    .views-icon{
+        display: none;
+    }
+    .card-date{
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .sign-in-option, 
+    .sign-up-option {
+        display: none;
+    }
+    .sign-up-top-text, 
+    .sign-in-top-text {
+        display: none;
+    }
+    .sign-up-form-container, .sign-in-form-container {
+        width: 100;
+        grid-template-areas: "sign-up sign-up";
+    }
+    .submit-btn-wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .submit-btn-wrapper a{
+        display: block;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 17px;
+        color: #000;
+    }
+    .sign-up-form button[type="submit"],
+    .sign-in-form button[type="submit"]{
+        width: max-content;
+        padding: 0.5rem 1.5rem;
+    }
+    .mobile-term-and-conditions{
+        display: block;
+        margin-top: 0.5rem;
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: -0.008em;
+        text-align: center;
+
     }
 }
 @media only screen and (max-width: 510px){
@@ -318,5 +629,75 @@ html{
         font-size: 12px;
         line-height: 16px;
     }
+    .post-section{
+        padding: 0;
+    }
+    .post-section .mobile-nav{
+        padding: 0 1rem;
+    }
+    .post-type,
+    .card-description{
+        font-size: 14px;
+    }
+    .post-card .card-title{
+        font-size: 16px;
+    }
+    .card-date{
+        font-size: 12px;
+        margin: 0.5rem 0;
+    }
+    .btn-card-view{
+        font-weight: 600;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+    .sign-up-form-container, 
+    .sign-in-form-container {
+        width: 100%;
+        align-self: flex-end;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    .sign-up-form, 
+    .sign-in-form {
+        margin: 1rem;
+    }
+    .sign-up-form input, 
+    .sign-in-form input {
+        font-size: 13px;
+    }
+    .sign-up-form button[type="submit"], 
+    .sign-in-form button[type="submit"] {
+        font-size: 13px;
+    }
+    .sign-up-form button[type="submit"], 
+    .sign-in-form button[type="submit"] {
+        font-size: 13px;
+    }
+    .form-heading {
+        font-size: 18px;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .form-heading img{
+        width: 1.5rem;
+        height: 1.5rem;
+        display: block;
+    }
+    .close-form{
+        display: none;
+    }
 }
 /**************** MEDIA QUERIES END ************************* */
+
+/**************** Animations ********************************/
+@keyframes scale-in {
+    0%{
+        transform:scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

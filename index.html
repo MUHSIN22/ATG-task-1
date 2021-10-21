@@ -20,7 +20,7 @@
             <input type="search" name="search-input" id="search-input"
                 placeholder="Search for your favorite groups in ATG">
         </div>
-        <a href="#" id="btn-create-account">
+        <a href="#" onclick="showSignUp()" id="btn-create-account">
             Create account. <strong class="text-primary">I’s free!</strong>
             <img src="/public/down-arrow.png" alt="">
         </a>
@@ -63,6 +63,13 @@
                 </button>
             </div>
         </nav>
+        <nav class="mobile-nav bg-white">
+            <strong>Posts(368)</strong>
+            <button class="btn btn-filter">
+                Filter:All
+                <img src="/public/down-arrow.png" alt="">
+            </button>
+        </nav>
         <section class="location-container">
             <div class="location-wrapper">
                 <div class="location-input-wrapper">
@@ -90,27 +97,27 @@
                         stuck of life
                     </p>
                     <div class="profile-and-share">
-                        <div class="profile">
-                            <img src="/public/profile-1.png" alt="">
-                            <strong>Sarthak Kamra</strong>
-                        </div>
-                        <div class="share-and-views">
+                        <img src="/public/profile-1.png" class="profile" alt="">
+                        <strong class="profile-name">Sarthak Kamra</strong>
+                        <div class="views-section">
                             <img src="public/visibility.svg" class="views-icon" alt="">
                             <p class="views">1.4k views</p>
-                            <button class="btn">
-                                <img src="/public/share.png" alt="">
-                            </button>
                         </div>
+                        <button class="btn btn-share">
+                            <img src="/public/share.png" alt="">
+                            <span>Share</span>
+                        </button>
                     </div>
                 </div>
             </div>
 
             <div class="post-card">
-                <div class="image-container" style="background: url('/public/card 1 image.png')"></div>
+                <div class="image-container" style="background: url('/public/card 2 image.png')"></div>
                 <div class="card-body">
-                    <p class="post-type">✍️ Article</p>
+                    <p class="post-type">🔬️ Education</p>
                     <div class="card-title-wrapper">
-                        <h6 class="card-title">What if famous brands had regular fonts? Meet RegulaBrands!</h6>
+                        <h6 class="card-title">Tax Benefits for Investment under National Pension Scheme launched by
+                            Government</h6>
                         <img src="/public/card-options.png" alt="">
                     </div>
                     <p class="card-description">
@@ -118,106 +125,184 @@
                         stuck of life
                     </p>
                     <div class="profile-and-share">
-                        <div class="profile">
-                            <img src="/public/profile-1.png" alt="">
-                            <strong>Sarthak Kamra</strong>
-                        </div>
-                        <div class="share-and-views">
+                        <img src="/public/profile 4.png" class="profile" alt="">
+                        <strong class="profile-name">Sarah West</strong>
+                        <div class="views-section">
                             <img src="public/visibility.svg" class="views-icon" alt="">
                             <p class="views">1.4k views</p>
-                            <button class="btn">
-                                <img src="/public/share.png" alt="">
-                            </button>
                         </div>
+                        <button class="btn btn-share">
+                            <img src="/public/share.png" alt="">
+                            <span>Share</span>
+                        </button>
                     </div>
                 </div>
             </div>
 
             <div class="post-card">
-                <div class="image-container" style="background: url('/public/card 1 image.png')"></div>
+                <div class="image-container" style="background: url('/public/card 3 image.png')"></div>
                 <div class="card-body">
-                    <p class="post-type">✍️ Article</p>
+                    <p class="post-type">🗓️ Meetup</p>
                     <div class="card-title-wrapper">
-                        <h6 class="card-title">What if famous brands had regular fonts? Meet RegulaBrands!</h6>
+                        <h6 class="card-title">Finance & Investment Elite Social Mixer @Lujiazui</h6>
                         <img src="/public/card-options.png" alt="">
                     </div>
-                    <p class="card-description">
-                        I’ve worked in UX for the better part of a decade. From now on, I plan to reivield due to the
-                        stuck of life
-                    </p>
+                    <div class="card-date">
+                        <p>
+                            <img src="/public/date.png" alt="">
+                            Fri, 12 Oct, 2018
+                        </p>
+                        <p class="post-card-location">
+                            <img src="/public/location.png" alt="">
+                            Ahmedabad, India
+                        </p>
+                    </div>
+                    <button class="btn btn-card-view text-danger">
+                        Visit Website
+                    </button>
                     <div class="profile-and-share">
-                        <div class="profile">
-                            <img src="/public/profile-1.png" alt="">
-                            <strong>Sarthak Kamra</strong>
-                        </div>
-                        <div class="share-and-views">
+                        <img src="/public/profile 3.png" class="profile" alt="">
+                        <strong class="profile-name">Ronal Jones</strong>
+                        <div class="views-section">
                             <img src="public/visibility.svg" class="views-icon" alt="">
                             <p class="views">1.4k views</p>
-                            <button class="btn">
-                                <img src="/public/share.png" alt="">
-                            </button>
                         </div>
+                        <button class="btn btn-share">
+                            <img src="/public/share.png" alt="">
+                            <span>Share</span>
+                        </button>
                     </div>
                 </div>
             </div>
 
             <div class="post-card">
-                <div class="image-container" style="background: url('/public/card 1 image.png')"></div>
                 <div class="card-body">
-                    <p class="post-type">✍️ Article</p>
+                    <p class="post-type">💼️ Job</p>
                     <div class="card-title-wrapper">
-                        <h6 class="card-title">What if famous brands had regular fonts? Meet RegulaBrands!</h6>
+                        <h6 class="card-title">Software Developer</h6>
                         <img src="/public/card-options.png" alt="">
                     </div>
-                    <p class="card-description">
-                        I’ve worked in UX for the better part of a decade. From now on, I plan to reivield due to the
-                        stuck of life
-                    </p>
+                    <div class="card-date">
+                        <p>
+                            <img src="/public/job-icon.png" alt="">
+                            Innovaccer Analytics Private Ltd.
+                        </p>
+                        <p class="post-card-location">
+                            <img src="/public/location.png" alt="">
+                            Noida, India
+                        </p>
+                    </div>
+                    <button class="btn btn-card-view text-success">
+                        Apply on Timesjobs
+                    </button>
                     <div class="profile-and-share">
-                        <div class="profile">
-                            <img src="/public/profile-1.png" alt="">
-                            <strong>Sarthak Kamra</strong>
-                        </div>
-                        <div class="share-and-views">
+                        <img src="/public/profile 2.png" class="profile" alt="">
+                        <strong class="profile-name">Joseph Gray</strong>
+                        <div class="views-section">
                             <img src="public/visibility.svg" class="views-icon" alt="">
                             <p class="views">1.4k views</p>
-                            <button class="btn">
-                                <img src="/public/share.png" alt="">
-                            </button>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="post-card">
-                <div class="image-container" style="background: url('/public/card 1 image.png')"></div>
-                <div class="card-body">
-                    <p class="post-type">✍️ Article</p>
-                    <div class="card-title-wrapper">
-                        <h6 class="card-title">What if famous brands had regular fonts? Meet RegulaBrands!</h6>
-                        <img src="/public/card-options.png" alt="">
-                    </div>
-                    <p class="card-description">
-                        I’ve worked in UX for the better part of a decade. From now on, I plan to reivield due to the
-                        stuck of life
-                    </p>
-                    <div class="profile-and-share">
-                        <div class="profile">
-                            <img src="/public/profile-1.png" alt="">
-                            <strong>Sarthak Kamra</strong>
-                        </div>
-                        <div class="share-and-views">
-                            <img src="public/visibility.svg" class="views-icon" alt="">
-                            <p class="views">1.4k views</p>
-                            <button class="btn">
-                                <img src="/public/share.png" alt="">
-                            </button>
-                        </div>
+                        <button class="btn btn-share">
+                            <img src="/public/share.png" alt="">
+                            <span>Share</span>
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
     </section>
+
+    <!------------------Login Form ----------------------->
+    <section class="sign-up-wrapper">
+        <div class="sign-up-form-container">
+            <img src="/public/close-icon.png" onclick="closeSignUp()" class="close-form" alt="">
+            <p class="sign-up-top-text">Let's learn, share & inspire each other with our passion for computer
+                engineering. Sign up now 🤘🏼</p>
+            <form class="sign-up-form">
+                <h1 class="form-heading">
+                    Create Account
+                    <img src="/public/close-icon-black.png" alt="">
+                </h1>
+                <div class="first-and-last-name">
+                    <input type="text" placeholder="First Name">
+                    <input type="text" placeholder="Last Name">
+                </div>
+                <input type="email" placeholder="Email">
+                <div class="password-wrapper">
+                    <input type="password" placeholder="Password">
+                    <div class="password-visibility-icon">
+                        <img src="/public/visibility.svg" alt="">
+                    </div>
+                </div>
+                <input type="password" placeholder="Confirm Password">
+                    
+                <div class="submit-btn-wrapper">
+                    <button type="submit" class="btn btn-primary create-account">Create Account</button>
+                    <a href="#">or, Sign In</a>
+                </div>
+                <button class="btn more-sign-up-option">
+                    <img src="/public/facebook.png" alt="">
+                    Sign up with Facebook
+                </button>
+                <button class="btn more-sign-up-option">
+                    <img src="/public/google.png" alt="">
+                    Sign up with Google
+                </button>
+                <p class="mobile-term-and-conditions">
+                    By signing up, you agree to our Terms & <br> conditions, Privacy policy
+                </p>
+            </form>
+
+            <div class="sign-in-option">
+                <p class="sign-in-para">
+                    Already have an account? <a href="#">Sign In</a>
+                </p>
+                <img src="/public/atg_illustration.png" alt="">
+                <p class="terms-and-condition">By signing up, you agree to our Terms & conditions, Privacy policy</p>
+            </div>
+        </div>
+    </section>
+    <section class="sign-in-wrapper">
+        <div class="sign-in-form-container">
+            <img src="/public/close-icon.png" onclick="closeSignIp()" class="close-form" alt="">
+            <p class="sign-in-top-text">Let's learn, share & inspire each other with our passion for computer
+                engineering. Sign up now 🤘🏼</p>
+            <form class="sign-in-form">
+                <h1 class="form-heading">
+                    Sign In
+                    <img src="/public/close-icon-black.png" alt="">
+                </h1>
+                <input type="email" placeholder="Email">
+                <div class="password-wrapper">
+                    <input type="password" placeholder="Password">
+                    <div class="password-visibility-icon">
+                        <img src="/public/visibility.svg" alt="">
+                    </div>
+                </div>       
+                <div class="submit-btn-wrapper">
+                    <button type="submit" class="btn btn-primary create-account">Sign In</button>
+                    <a href="#">or, Create Account</a>
+                </div>
+                <button class="btn more-sign-in-option">
+                    <img src="/public/facebook.png" alt="">
+                    Sign In with Facebook
+                </button>
+                <button class="btn more-sign-in-option">
+                    <img src="/public/google.png" alt="">
+                    Sign In with Google
+                </button>
+                <a href="#" class="forget-password">Forgot Password?</a>
+            </form>
+
+            <div class="sign-up-option">
+                <p class="sign-up-para">
+                    Don’t have an account yet? <a href="#">Create new for free!</a>
+                </p>
+                <img src="/public/atg_illustration.png" alt="">
+            </div>
+        </div>
+    </section>
+    <script src="./script.js"></script>
 </body>
 
 </html>
