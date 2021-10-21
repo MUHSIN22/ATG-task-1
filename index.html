@@ -24,6 +24,11 @@
             Create account. <strong class="text-primary">I’s free!</strong>
             <img src="/public/down-arrow.png" alt="">
         </a>
+        <a href="#" class="profile-on-header">
+            <img src="/public/profile 2.png" alt="">
+            <span class="profile-name-header">Siddharth Goyal</span>
+            <img src="/public/down-arrow.png" alt="">
+        </a>
     </header>
     <header class="header-mobile container">
         <a href="#">
@@ -218,23 +223,23 @@
             <img src="/public/close-icon.png" onclick="closeSignUp()" class="close-form" alt="">
             <p class="sign-up-top-text">Let's learn, share & inspire each other with our passion for computer
                 engineering. Sign up now 🤘🏼</p>
-            <form class="sign-up-form">
+            <form class="sign-up-form" onSubmit="setLogin(event)">
                 <h1 class="form-heading">
                     Create Account
-                    <img src="/public/close-icon-black.png" alt="">
+                    <img src="/public/close-icon-black.png" onClick="closeSignUp()" alt="">
                 </h1>
                 <div class="first-and-last-name">
-                    <input type="text" placeholder="First Name">
-                    <input type="text" placeholder="Last Name">
+                    <input type="text" placeholder="First Name" required>
+                    <input type="text" placeholder="Last Name" required>
                 </div>
-                <input type="email" placeholder="Email">
+                <input type="email" placeholder="Email" required>
                 <div class="password-wrapper">
-                    <input type="password" placeholder="Password">
+                    <input type="password" class="password-field" placeholder="Password" required>
                     <div class="password-visibility-icon">
-                        <img src="/public/visibility.svg" alt="">
+                        <img src="/public/visibility.svg" class="visibility-icon" onclick="togglePasswordVisibility(0)" alt="">
                     </div>
                 </div>
-                <input type="password" placeholder="Confirm Password">
+                <input type="password" placeholder="Confirm Password" required>
                     
                 <div class="submit-btn-wrapper">
                     <button type="submit" class="btn btn-primary create-account">Create Account</button>
@@ -255,28 +260,30 @@
 
             <div class="sign-in-option">
                 <p class="sign-in-para">
-                    Already have an account? <a href="#">Sign In</a>
+                    Already have an account? <a href="#" onclick="showSignIn()">Sign In</a>
                 </p>
                 <img src="/public/atg_illustration.png" alt="">
                 <p class="terms-and-condition">By signing up, you agree to our Terms & conditions, Privacy policy</p>
             </div>
         </div>
     </section>
+
+
     <section class="sign-in-wrapper">
         <div class="sign-in-form-container">
-            <img src="/public/close-icon.png" onclick="closeSignIp()" class="close-form" alt="">
+            <img src="/public/close-icon.png" onclick="closeSignUp()" class="close-form" alt="">
             <p class="sign-in-top-text">Let's learn, share & inspire each other with our passion for computer
                 engineering. Sign up now 🤘🏼</p>
             <form class="sign-in-form">
                 <h1 class="form-heading">
                     Sign In
-                    <img src="/public/close-icon-black.png" alt="">
+                    <img src="/public/close-icon-black.png" onClick="closeSignUp()" alt="">
                 </h1>
-                <input type="email" placeholder="Email">
+                <input type="email" placeholder="Email" required>
                 <div class="password-wrapper">
-                    <input type="password" placeholder="Password">
+                    <input type="password" class="password-field" placeholder="Password" required>
                     <div class="password-visibility-icon">
-                        <img src="/public/visibility.svg" alt="">
+                        <img src="/public/visibility.svg" class="visibility-icon" onclick="togglePasswordVisibility(1)" alt="asd">
                     </div>
                 </div>       
                 <div class="submit-btn-wrapper">
@@ -296,12 +303,15 @@
 
             <div class="sign-up-option">
                 <p class="sign-up-para">
-                    Don’t have an account yet? <a href="#">Create new for free!</a>
+                    Don’t have an account yet? <a href="#" onclick="showSignUp()">Create new for free!</a>
                 </p>
                 <img src="/public/atg_illustration.png" alt="">
             </div>
         </div>
     </section>
+    <div class="edit-btn-mobile" onClick="showSignUp()">
+        <img src="/public/edit white.png" alt="">
+    </div>
     <script src="./script.js"></script>
 </body>
 
