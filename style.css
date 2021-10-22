@@ -284,7 +284,6 @@ html{
     border-radius: 4px;
     max-width: 780px;
     margin: 1rem 0;
-    overflow: hidden;
 }
 .post-card .image-container{
     height: 14rem;
@@ -381,6 +380,9 @@ html{
 }
 .option-list li:hover{
     background: var(--bg-grey);
+}
+.option-btn-enabled .option-list{
+    display: block;
 }
 /************* Card with button ***********/
 .card-date{

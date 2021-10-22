@@ -50,11 +50,7 @@ const navLinkClick = (event) => {
 }
 
 const showOptions = (event) =>{
-    if(event.target.nextElementSibling){
-        event.target.nextElementSibling.style.display = "block";
-    }else{
-        event.target.children[1].style.display = "block";
-    }
+    event.target.classList.add("option-btn-enabled")
 }
 
 const handleCardDescription = () =>{
@@ -87,4 +83,15 @@ const handleCardDescription = () =>{
     
 
 }
+
+
+
+document.addEventListener('click', function(event) {
+    var ignoreClickOnMeElement = document.querySelector(".option-btn-enabled");
+    var isClickInsideElement = ignoreClickOnMeElement.contains(event.target);
+    if (!isClickInsideElement) {
+        document.querySelector('.option-btn-enabled').classList.remove("option-btn-enabled");
+    }
+});
+
 window.addEventListener("resize", handleCardDescription);
