@@ -4,18 +4,25 @@ let passwordVisible = [false,false]
 let isOptions = false
 let cardContent = [];
 
+// Function for sign Up popup
 const showSignUp = () =>{
     signIn.style.display = "none"
     signUp.style.display = "grid";
 }
+
+// Function for close sign up and login popup
 const closeSignUp = () =>{
     signIn.style.display = "none"
     signUp.style.display = "none";
 }
+
+// Function for sign in popup
 const showSignIn = () =>{
     signUp.style.display = "none"
     signIn.style.display = "grid"
 }
+
+// Function that toggle the password visibility
 const togglePasswordVisibility = (index) => {
     let passwordField = document.getElementsByClassName('password-field');
     let visibiltyIcon = document.getElementsByClassName('visibility-icon')
@@ -29,6 +36,7 @@ const togglePasswordVisibility = (index) => {
     }
 }
 
+// Function that set the logged in interface
 const setLogin = (event) => {
     event && event.preventDefault();
     signUp.style.display = "none";
@@ -42,17 +50,21 @@ const setLogin = (event) => {
     headerProfile.style.display = "block"
     
 }
+ 
 
+// Function that trigger the nav link click
 const navLinkClick = (event) => {
     let enabled = document.querySelector('.enabled-nav-link')
     enabled.classList.remove("enabled-nav-link")
     event.target.classList.add("enabled-nav-link")
 }
 
+// Function that open the option list when click on the option button in the postcard
 const showOptions = (event) =>{
     event.target.classList.add("option-btn-enabled")
 }
 
+// Function that manage the card description paragraph in single line and end with dot
 const handleCardDescription = () =>{
     let card = document.querySelector('.card-body')
     let cardDescription = document.querySelectorAll('.card-description')
@@ -85,7 +97,7 @@ const handleCardDescription = () =>{
 }
 
 
-
+// Event listner for any click outside the card option button
 document.addEventListener('click', function(event) {
     var ignoreClickOnMeElement = document.querySelector(".option-btn-enabled");
     var isClickInsideElement = ignoreClickOnMeElement.contains(event.target);
@@ -94,4 +106,5 @@ document.addEventListener('click', function(event) {
     }
 });
 
+// Event listner for the window resize, this will call the handleCardDescription function for set card description paragraph length
 window.addEventListener("resize", handleCardDescription);
